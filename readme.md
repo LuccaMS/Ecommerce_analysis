@@ -59,7 +59,42 @@ Somado a isso, foram propostas quatro hipóteses norteadoras para a resolução 
 
 **Abordagem Para a Quarta Hipótese:** Para testar esta hipótese, iremos agrupar os dados por faixa etária e origem, somar a quantidade total de compras pertencentes a cada grupo e extrair a mediana do valor total gasto por esse grupo.
 
-## Análise referente aos produtos do tipo livro
+## Roteiro de análise para todas as categorias
+
+- Separar os tipos de produtos em conjunto de dados diferentes para análise individual.
+- Utilização da tabela ANOVA (Análise de Variância) e dos p-values para aceitar as hipóteses nulas ou alternativas.
+- Verificar os resultados da tabela ANOVA através dos dados de cada tipo de produto.
+- Agrupar as vendas de cada tipo de produto por origem e grupo etário, extraindo a mediana de Total_Purchase_Amount gasto.
+- Após o agrupamento realizar a multiplicação da mediana de Total_Purchase_Amount por Source_Count, ou seja, a obtenção do valor mediano gasto por aquele grupo (considerando grupo etário e origem).
+- Utilização desta nova variável obtida como indicador da mediana do valor total gasto por um determinado grupo, obtendo assim os melhores grupos para vender uma categoria de produto.
+
+## Análise para livros
+
+A tabela ANOA abaixo apresenta a análise de variância das variáveis Genêro, Origem e grupo etário em relação ao Total_Purchase_Amount, através dela podemos perceber que os p-values para Gender e Source são altos, 0.959 e 0.11 respectivamente, isso indica que essas variáveis não tem um efeito significativo na variável Total_Purchase_Amount, idealmente o p-value precisa ser menor que 0.05 para indicar algum efeito significante. Tendo isso em vista, ambas hipóteses nulas das hipóteses 1 e 2 são aceitas. Contudo, se observamos a linha de age_group podemos notar um valor de p muito baixo o que indica que a faixa etária afeta muito significamente o  Total_Purchase_Amount, sendo assim, aceita-se a hipótese alternativa da hipótese 3.
+
+![Tabela_ANOA_Livros](livros.png)
+
+Para a confirmação do resultado obtido para as três primeiras hipóteses é possível observar os dados das três tabelas abaixo.
+
+
+![Mediana_livros_genero](livros_1.png)
+
+A tabela acima exibe a mediana do Total_Purchase_Amount por gênero para livros.
+
+![Mediana_livros_source](livros_2.png)
+
+A tabela acima exibe a mediana do Total_Purchase_Amount por cada Source diferente para livros.
+
+
+![Mediana_livros_age](livros_3.png)
+
+A tabela acima exibe a mediana do Total_Purchase_Amount por cada grupo etário diferente para livros.
+
+### Através da observação das 3 tabelas é possível confirmar que a análise de variância estava correta.
+
+
+
+
 
 
 
