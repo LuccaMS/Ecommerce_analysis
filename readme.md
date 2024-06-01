@@ -202,21 +202,70 @@ As tabelas e gráficos abaixo demonstram os melhores grupos para cada categoria 
 
 ### Livros 
 
-A tabela abaixo exibe os top 5 melhores compradores de livros considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
+A tabela abaixo exibe os top 5 melhores compradores da categoria books considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
 
 <div style="display: table-row; justify-content: space-around;">
     <div style="text-align: center;">
-        <h4>Tabela dos melhores compradores de livros</h4>
+        <h4>Tabela dos melhores compradores de books</h4>
         <img src="imgs/best_groups/books/melhores_livros_table.png">
     </div>
     <div style="text-align: center;">
-        <h4>Gráfico dos melhores compradores de livros</h4>
+        <h4>Gráfico dos melhores compradores de books</h4>
         <img src="imgs\best_groups\books\melhores_livros_grafico.png">
     </div>
 </div>
 
+### Eletronicos
 
+A tabela abaixo exibe os top 5 melhores compradores da categoria eletronics considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
 
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>Tabela dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\eletronics\melhores_eletronicos_table.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Gráfico dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\eletronics\melhores_eletronicos_grafico.png">
+    </div>
+</div>
+
+### Home
+
+A tabela abaixo exibe os top 5 melhores compradores da categoria home considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
+
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>Tabela dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\home\melhores_home_table.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Gráfico dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\home\melhores_home_grafico.png">
+    </div>
+</div>
+
+### Clothing
+
+A tabela abaixo exibe os top 5 melhores compradores da categoria clothing considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
+
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>Tabela dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\clothing\melhores_clothing_table.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Gráfico dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\clothing\melhores_clothing_grafico.png">
+    </div>
+</div>
+
+## Bibliotecas utilizadas
+
+- Pandas
+- Seaborn
+- statsmodels
+- sklearn
 
 
 
