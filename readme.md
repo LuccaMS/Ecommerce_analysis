@@ -68,76 +68,51 @@ Somado a isso, foram propostas quatro hipóteses norteadoras para a resolução 
 - Após o agrupamento realizar a multiplicação da mediana de Total_Purchase_Amount por Source_Count, ou seja, a obtenção do valor mediano gasto por aquele grupo (considerando grupo etário e origem).
 - Utilização desta nova variável obtida como indicador da mediana do valor total gasto por um determinado grupo, obtendo assim os melhores grupos para vender uma categoria de produto.
 
-## Análise para livros
+## Análise das hipóteses 1, 2 e 3 para todas as categorias de produtos
 
-A tabela ANOVA abaixo apresenta a análise de variância das variáveis Gênero, Origem e Grupo Etário em relação ao Total_Purchase_Amount. Podemos perceber que os p-values para Gender e Source são altos, 0.959 e 0.11 respectivamente, indicando que essas variáveis não têm um efeito significativo na variável Total_Purchase_Amount. Idealmente, o p-value precisa ser menor que 0.05 para indicar algum efeito significante. Tendo isso em vista, ambas as hipóteses nulas das hipóteses 1 e 2 são aceitas. Contudo, observando a linha de age_group, podemos notar um valor de p muito baixo, o que indica que a faixa etária afeta muito significativamente o Total_Purchase_Amount, sendo assim, aceita-se a hipótese alternativa da hipótese 3.
+A fim de determinar se a hipótese nula ou alternativa seria aceita para os quatro diferentes tipos de categorias de produtos foi utilzado a tabela ANOVA. 
 
-![Tabela ANOVA Livros](imgs/books/livros_anova.png)
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria clothing</h4>
+        <img src="imgs/hypothesis_123/anova_table_clothing.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria eletronics</h4>
+        <img src="imgs/hypothesis_123/anova_table_eletronicos.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria home</h4>
+        <img src="imgs/hypothesis_123/anova_table_home.png" ">
+    </div>
+        <div style="text-align: center;">
+        <h4>ANOVA para catagoria books</h4>
+        <img src="imgs/hypothesis_123/anova_table_livros.png">
+    </div>
+</div>
 
-Para a confirmação do resultado obtido para as três primeiras hipóteses, é possível observar os dados das três tabelas abaixo.
+ As tabelas acima exibem o grau de significancia de variacia entre a variável Total_Purchase_Amount e as variáveis de Genero, Source e age_group para os diferentes tipos de categoria de produto. Para que uma variável tenha um efeito significante em Total_Purchase_Amount é necessário que seu p-value seja menor que 0.05, e quanto menor esse valor, maior o seu efeito. Através disso, é possível observar uma tendência, de que o genero e o Source não tem efeitos significante em Total_Purchase_Amount para todas as categorias de produto, sendo assim, podemos assumir as hipóteses nulas sobre as hipóteses 1 e 2 para todas as categorias de produto, tendo em vista que seus p-values são altos. De maneira similar, é possível observar que para todas as categorias de produtos o age_group possui um p-value extremamente baixo, assim, indica-se que devemos aceitar a hipótese alternativa para todas as categorias de produtos, que indica que o grupo etário influência diretamente no valor gasto total em uma compra.
 
-#### Mediana do Total_Purchase_Amount por Gênero
+ As tabelas abaixo
 
-![Mediana livros gênero](imgs/books/livros_1.png)
-
-#### Mediana do Total_Purchase_Amount por Source
-
-![Mediana livros source](imgs/books/livros_2.png)
-
-#### Mediana do Total_Purchase_Amount por Grupo Etário
-
-![Mediana livros age](imgs/books/livros_3.png)
-
-### Através da observação das 3 tabelas é possível confirmar que a análise de variância estava correta e que somente os grupos etários demonstram uma grande variância em relação ao Total_Purchase_Amount.
-
-A tabela abaixo realiza a análise de variância de origens e grupos etários considerando a variável "Rate", que é obtida através da multiplicação da mediana de Total_Purchase_Amount pela quantidade de compras considerando aquela origem e grupo etário.
-
-![Anova 2](imgs/books/livros_anova2.png)
-
-Através dessa tabela é possível observar que a origem e grupo etário possuem uma grande relação com a variância do Rate, devido aos seus p-values muito menores que 0.05, indicando que a hipótese alternativa deve ser aceita. Ou seja, existe de fato algum grupo dentre os possíveis que se destacam com a maior venda mediana.
-
-A tabela abaixo exibe quais são os melhores grupos para a venda de livros, neste caso, o valor de Rate foi normalizado através da técnica de MinMax onde o valor máximo é transformado em 1 e o mínimo em 0.
-
-![best_groups_table_books](imgs/books/best_groups_table_books.png)
-
-O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda). 
-![best_groups_table_books](imgs/books/best_groups_graph_books.png)
-
-## Análise para eletronicos
-
-A tabela anova para os produtos de categoria eletronicos indica que o gênero e a origem tem pouca significância, assim aceita-se as hipóteses nulas das hipotéses 1 e 2. Além disso, indica-se a alta significancia do grupo etário devido ao p-value muito baixo.
-
-![Tabela ANOVA eletronicos](imgs/eletronicos/eletronicos_anova.png)
-
-Para a confirmação do resultado obtido para as três primeiras hipóteses, é possível observar os dados das três tabelas abaixo.
-
-#### Mediana do Total_Purchase_Amount por Gênero
-
-![Mediana eletronicos gênero](imgs/eletronicos/eletronicos_1.png)
-
-#### Mediana do Total_Purchase_Amount por Source
-
-![Mediana eletronicos source](imgs/eletronicos/eletronicos_2.png)
-
-#### Mediana do Total_Purchase_Amount por Grupo Etário
-
-![Mediana eletronicos age](imgs/eletronicos/eletronicos_3.png)
-
-### Através da análise das 3 tabelas confirma-se o inferido com a análise da tabela de variância.
-
-
-![Anova 2](imgs/eletronicos/eletronicos_anova2.png)
-
-Através dessa tabela é possível observar que a origem e grupo etário possuem uma grande relação com a variância do Rate, devido aos seus p-values muito menores que 0.05, indicando que a hipótese alternativa deve ser aceita. Ou seja, existe de fato algum grupo dentre os possíveis que se destacam com a maior venda mediana.
-
-A tabela abaixo exibe quais são os melhores grupos para a venda de livros, neste caso, o valor de Rate foi normalizado através da técnica de MinMax onde o valor máximo é transformado em 1 e o mínimo em 0.
-
-![best_groups_table_eletronicos](imgs/eletronicos/best_groups_table_eletronicos.png)
-
-O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda). 
-![best_groups_table_eletronicos](imgs/eletronicos/best_groups_graph_eletronicos.png)
-
-
+ <div style="display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h5>Mediana de Total_Purchase_Amount por genero  </h5>
+        <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_clothing.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria eletronics</h4>
+        <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_eletronicos.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria home</h4>
+        <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_home.png" ">
+    </div>
+        <div style="text-align: center;">
+        <h4>ANOVA para catagoria books</h4>
+        <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_books.png">
+    </div>
+</div>
 
 
 
