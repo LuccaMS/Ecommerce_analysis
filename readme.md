@@ -9,24 +9,24 @@
 
 A seguinte imagem exibe a distribuição de vendas nos últimos 3 anos, considerando a data de 30 de maio de 2021. É possível observar que os dois produtos que mais venderam foram livros e roupas, praticamente empatando em quantidade, seguido de eletronicos e produtos de casa, também com quantidades extremamente similares.
 
-![Distribuição de tipos de produtos vendidos nos últimos 3 anos](1.png)
+![Distribuição de tipos de produtos vendidos nos últimos 3 anos](imgs/1.png)
 
 
 ### Qual o produto mais caro e o mais barato ?
 
 Não existe uma categoria com um produto mais caro ou mais barato em comparativo com as outras, em todas as categorias o mesmo padrão se repete, o produto mais barato tem o preço 10 e o mais caro o preço 500.
 
-![Produto mais caro e barato por categoria de produto](2.png)
+![Produto mais caro e barato por categoria de produto](imgs/2.png)
 
 ### Qual a categoria de produto mais vendida e a menos vendida? Qual a categoria mais cara e menos cara?
 
 A categoria mais vendida foi a de roupas e a menos vendida foi a de produtos caseiros
 
-![Produto mais caro e barato por categoria de produto](3.png)
+![Produto mais caro e barato por categoria de produto](imgs/3.png)
 
 Através da análise da mediana de preço de produtos por categoria é possível observar uma variação extremamente baixa, onde os produtos mais caros se encontram no setor de produtos para casa e os mais baratos em roupa e eletronicos, que possuem a mesma mediana.
 
-![Produto mais caro e barato por categoria de produto](4.png)
+![Produto mais caro e barato por categoria de produto](imgs/4.png)
 
 
 # Resolução do Desafio
@@ -70,28 +70,39 @@ Somado a isso, foram propostas quatro hipóteses norteadoras para a resolução 
 
 ## Análise para livros
 
-A tabela ANOA abaixo apresenta a análise de variância das variáveis Genêro, Origem e grupo etário em relação ao Total_Purchase_Amount, através dela podemos perceber que os p-values para Gender e Source são altos, 0.959 e 0.11 respectivamente, isso indica que essas variáveis não tem um efeito significativo na variável Total_Purchase_Amount, idealmente o p-value precisa ser menor que 0.05 para indicar algum efeito significante. Tendo isso em vista, ambas hipóteses nulas das hipóteses 1 e 2 são aceitas. Contudo, se observamos a linha de age_group podemos notar um valor de p muito baixo o que indica que a faixa etária afeta muito significamente o  Total_Purchase_Amount, sendo assim, aceita-se a hipótese alternativa da hipótese 3.
+A tabela ANOVA abaixo apresenta a análise de variância das variáveis Gênero, Origem e Grupo Etário em relação ao Total_Purchase_Amount. Podemos perceber que os p-values para Gender e Source são altos, 0.959 e 0.11 respectivamente, indicando que essas variáveis não têm um efeito significativo na variável Total_Purchase_Amount. Idealmente, o p-value precisa ser menor que 0.05 para indicar algum efeito significante. Tendo isso em vista, ambas as hipóteses nulas das hipóteses 1 e 2 são aceitas. Contudo, observando a linha de age_group, podemos notar um valor de p muito baixo, o que indica que a faixa etária afeta muito significativamente o Total_Purchase_Amount, sendo assim, aceita-se a hipótese alternativa da hipótese 3.
 
-![Tabela_ANOA_Livros](livros.png)
+![Tabela ANOVA Livros](imgs/books/livros_anova.png)
 
-Para a confirmação do resultado obtido para as três primeiras hipóteses é possível observar os dados das três tabelas abaixo.
+Para a confirmação do resultado obtido para as três primeiras hipóteses, é possível observar os dados das três tabelas abaixo.
 
+#### Mediana do Total_Purchase_Amount por Gênero
 
-![Mediana_livros_genero](livros_1.png)
+![Mediana livros gênero](imgs/books/livros_1.png)
 
-A tabela acima exibe a mediana do Total_Purchase_Amount por gênero para livros.
+#### Mediana do Total_Purchase_Amount por Source
 
-![Mediana_livros_source](livros_2.png)
+![Mediana livros source](imgs/books/livros_2.png)
 
-A tabela acima exibe a mediana do Total_Purchase_Amount por cada Source diferente para livros.
+#### Mediana do Total_Purchase_Amount por Grupo Etário
 
+![Mediana livros age](imgs/books/livros_3.png)
 
-![Mediana_livros_age](livros_3.png)
+### Através da observação das 3 tabelas é possível confirmar que a análise de variância estava correta e que somente os grupos etários demonstram uma grande variância em relação ao Total_Purchase_Amount.
 
-A tabela acima exibe a mediana do Total_Purchase_Amount por cada grupo etário diferente para livros.
+A tabela abaixo realiza a análise de variância de origens e grupos etários considerando a variável "Rate", que é obtida através da multiplicação da mediana de Total_Purchase_Amount pela quantidade de compras considerando aquela origem e grupo etário.
 
-### Através da observação das 3 tabelas é possível confirmar que a análise de variância estava correta.
+![Anova 2](imgs/books/livros_anova2.png)
 
+Através dessa tabela é possível observar que a origem e grupo etário possuem uma grande relação com a variância do Rate, devido aos seus p-values muito menores que 0.05, indicando que a hipótese alternativa deve ser aceita. Ou seja, existe de fato algum grupo dentre os possíveis que se destacam com a maior venda mediana.
+
+A tabela abaixo exibe quais são os melhores grupos para a venda de livros, neste caso, o valor de Rate foi normalizado através da técnica de MinMax onde o valor máximo é transformado em 1 e o mínimo em 0.
+
+![best_groups_table_books](imgs/books/best_groups_table_books.png)
+
+O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda)
+
+![best_groups_table_books](imgs/books/best_groups_graph_books.png)
 
 
 
