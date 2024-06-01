@@ -93,26 +93,132 @@ A fim de determinar se a hipótese nula ou alternativa seria aceita para os quat
 
  As tabelas acima exibem o grau de significancia de variacia entre a variável Total_Purchase_Amount e as variáveis de Genero, Source e age_group para os diferentes tipos de categoria de produto. Para que uma variável tenha um efeito significante em Total_Purchase_Amount é necessário que seu p-value seja menor que 0.05, e quanto menor esse valor, maior o seu efeito. Através disso, é possível observar uma tendência, de que o genero e o Source não tem efeitos significante em Total_Purchase_Amount para todas as categorias de produto, sendo assim, podemos assumir as hipóteses nulas sobre as hipóteses 1 e 2 para todas as categorias de produto, tendo em vista que seus p-values são altos. De maneira similar, é possível observar que para todas as categorias de produtos o age_group possui um p-value extremamente baixo, assim, indica-se que devemos aceitar a hipótese alternativa para todas as categorias de produtos, que indica que o grupo etário influência diretamente no valor gasto total em uma compra.
 
- As tabelas abaixo
+ As tabelas abaixo exibem as medianas de Total_Purchase_Amount por gênero para cada cetogira de produto, o que confirma a nossa aceitação da hipótese nula para hipótese 1, ou seja, não existe influência significativa do gênero no valor total gasto de cada compra.
 
  <div style="display: flex; justify-content: space-around;">
     <div style="text-align: center;">
-        <h5>Mediana de Total_Purchase_Amount por genero  </h5>
+        <h5>Clothing</h5>
         <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_clothing.png">
     </div>
     <div style="text-align: center;">
-        <h4>ANOVA para categoria eletronics</h4>
+        <h4>Eletronics</h4>
         <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_eletronicos.png">
     </div>
     <div style="text-align: center;">
-        <h4>ANOVA para categoria home</h4>
+        <h4>Home</h4>
         <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_home.png" ">
     </div>
         <div style="text-align: center;">
-        <h4>ANOVA para catagoria books</h4>
+        <h4>Books</h4>
         <img src="imgs\hypothesis_123\mediana_value_gender\mediana_value_gender_books.png">
     </div>
 </div>
+
+
+
+ As tabelas abaixo exibem as medianas de Total_Purchase_Amount por Source para cada cetogira de produto, o que confirma a nossa aceitação da hipótese nula para hipótese 2, ou seja, não existe influência significativa do Source no valor total gasto de cada compra.
+
+ <div style="display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h5>Clothing</h5>
+        <img src="imgs\hypothesis_123\mediana_value_source\mediana_value_gender_clothing.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Eletronics</h4>
+        <img src="imgs\hypothesis_123\mediana_value_source\mediana_value_gender_eletronics.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Home</h4>
+        <img src="imgs\hypothesis_123\mediana_value_source\mediana_value_gender_home.png">
+    </div>
+        <div style="text-align: center;">
+        <h4>Books</h4>
+        <img src="imgs\hypothesis_123\mediana_value_source\mediana_value_gender_books.png">
+    </div>
+</div>
+
+ As tabelas abaixo exibem as medianas de Total_Purchase_Amount por grupo etário para cada cetogira de produto, o que confirma a nossa aceitação da hipótese alternativa para hipótese 3, ou seja, o grupo etária tem uma influência significativa no valor total gasto de cada compra.
+
+  <div style="display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h5>Clothing</h5>
+        <img src="imgs\hypothesis_123\mediana_value_agegroup\mediana_value_agegroup_clothing.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Eletronics</h4>
+        <img src="imgs\hypothesis_123\mediana_value_agegroup\mediana_value_agegroup_eletronics.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Home</h4>
+        <img src="imgs\hypothesis_123\mediana_value_agegroup\mediana_value_agegroup_home.png">
+    </div>
+        <div style="text-align: center;">
+        <h4>Books</h4>
+        <img src="imgs\hypothesis_123\mediana_value_agegroup\mediana_value_agegroup_books.png">
+    </div>
+</div>
+
+## Análise da quarta hipótese para todas as categorias de produtos
+
+Através da análises das outras hipóteses sabe-se que o gênero não tem um impacto significativo no valor total gasto de cada compra, por isso, as compras de ambos os gêneros foram agregados em grupos. A ideia principal foi agrupar compras em que os compradores possuiam a mesma faixa etária e a mesma origem de compra, obtendo a mediana do Total_Purchase_Amount nesse processo e contando quantas compras se encaixavam nesse critério. Desta maneira, foi possível obter tabelas similares ao exemplo abaixo para cada uma das categorias de produto. Sendo assim, é possível observar a quantidade total de compras que pessoas de um determinado grupo etário realizaram em um determinado Source para uma categoria de produto, e, além disso, saber a mediana do valor total da compra de todas essas pessoas.
+
+![exemplo_agrupamento](imgs/exemplo_agrupamento.png)
+
+Após isso, uma nova coluna chamada 'Rate' é calculada através da multiplicação do 'Source_Count' (quantidade de compras daquele grupo) pelo Total_Purchase_Amount a fim de obter a mediana de gasto total daquele grupo como uma estimativa do melhor grupo para vender. A tabela abaixo representa a mudança após a realização da multplicação, é possível observar que os valores são muito altos, o que dificulta a visualização dos melhores grupos, além da tabela não estar ordenada.
+
+![exemplo_agrupamento](imgs/exemplo_agrupamento_rate.png)
+
+Após esse processo da obtenção da estimativa de melhores grupos, foi realizado a análise de variância novamente para todos os grupos a fim de verificar se o Source ou o age_group tem um efeito significante no valor total mediano por grupo.
+
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria clothing rate</h4>
+        <img src="imgs\hypothesis_4\anova_table_clothing4.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria eletronics RATE</h4>
+        <img src="imgs\hypothesis_4\anova_table_eletronicos4.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>ANOVA para categoria home RATE</h4>
+        <img src="imgs\hypothesis_4\anova_table_home4.png">
+    </div>
+        <div style="text-align: center;">
+        <h4>ANOVA para catagoria books RATE</h4>
+        <img src="imgs\hypothesis_4\anova_table_livros4.png">
+    </div>
+</div>
+
+Através das tabelas ANOVA acima, é possível perceber que ambas variáveis, Source e age_group apresentam um p-value muito abaixo de 0.05, ou seja, ambas tem um efeito muito significante no valor total mediano de compra. E, desta maneira, podemos aceitar a hipótese alternativa para hipótese número quatro, ou seja, existe algum grupo que se destaca entre os outros no valor total mediano de compra.
+
+
+## Conclusões finais e análise do cenário
+
+Através da análise das quatro hipótese, notamos que o gênero e o Source possuem uma baixa influência no valor total de cada compra, e o grupo etário é extremamente relevante. Entretanto, após a extração de um valor mediano de gasto dos grupos nota-se que o Source afeta sim o valor total mediano gasto, isso se deve porque a segunda hipótese analisa apenas o valor mediano individual de cada Source, sem considerar que alguns Sources possuem uma taxa de venda maior, ao realizarmos a multplicação de ambos os fatores é evidente que o Source impacta no valor total gerado por um determinado Source, apesar de que o Source não implica em um valor de uma compra diferente de outro Source.
+
+### Sendo assim, chega-se a conclusão final de que existem grupos (considerando faixa etária e Source) melhores para a venda de cada tipo de produto.
+
+As tabelas e gráficos abaixo demonstram os melhores grupos para cada categoria de produto.
+
+### Livros 
+
+A tabela abaixo exibe os top 5 melhores compradores de livros considerando um valor total de compra mediano. O valor rate foi normalizado através do algoritmo MinMaxScaling.
+
+<div style="display: table-row; justify-content: space-around;">
+    <div style="text-align: center;">
+        <h4>Tabela dos melhores compradores de livros</h4>
+        <img src="imgs/best_groups/books/melhores_livros_table.png">
+    </div>
+    <div style="text-align: center;">
+        <h4>Gráfico dos melhores compradores de livros</h4>
+        <img src="imgs\best_groups\books\melhores_livros_grafico.png">
+    </div>
+</div>
+
+
+
+
+
 
 
 
