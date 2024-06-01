@@ -100,9 +100,42 @@ A tabela abaixo exibe quais são os melhores grupos para a venda de livros, nest
 
 ![best_groups_table_books](imgs/books/best_groups_table_books.png)
 
-O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda)
-
+O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda). 
 ![best_groups_table_books](imgs/books/best_groups_graph_books.png)
+
+## Análise para eletronicos
+
+A tabela anova para os produtos de categoria eletronicos indica que o gênero e a origem tem pouca significância, assim aceita-se as hipóteses nulas das hipotéses 1 e 2. Além disso, indica-se a alta significancia do grupo etário devido ao p-value muito baixo.
+
+![Tabela ANOVA eletronicos](imgs/eletronicos/eletronicos_anova.png)
+
+Para a confirmação do resultado obtido para as três primeiras hipóteses, é possível observar os dados das três tabelas abaixo.
+
+#### Mediana do Total_Purchase_Amount por Gênero
+
+![Mediana eletronicos gênero](imgs/eletronicos/eletronicos_1.png)
+
+#### Mediana do Total_Purchase_Amount por Source
+
+![Mediana eletronicos source](imgs/eletronicos/eletronicos_2.png)
+
+#### Mediana do Total_Purchase_Amount por Grupo Etário
+
+![Mediana eletronicos age](imgs/eletronicos/eletronicos_3.png)
+
+### Através da análise das 3 tabelas confirma-se o inferido com a análise da tabela de variância.
+
+
+![Anova 2](imgs/eletronicos/eletronicos_anova2.png)
+
+Através dessa tabela é possível observar que a origem e grupo etário possuem uma grande relação com a variância do Rate, devido aos seus p-values muito menores que 0.05, indicando que a hipótese alternativa deve ser aceita. Ou seja, existe de fato algum grupo dentre os possíveis que se destacam com a maior venda mediana.
+
+A tabela abaixo exibe quais são os melhores grupos para a venda de livros, neste caso, o valor de Rate foi normalizado através da técnica de MinMax onde o valor máximo é transformado em 1 e o mínimo em 0.
+
+![best_groups_table_eletronicos](imgs/eletronicos/best_groups_table_eletronicos.png)
+
+O gráfico abaixo exibe o "Rate" (indicador de melhor grupo para venda). 
+![best_groups_table_eletronicos](imgs/eletronicos/best_groups_graph_eletronicos.png)
 
 
 
