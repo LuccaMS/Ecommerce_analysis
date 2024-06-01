@@ -26,6 +26,15 @@ Através da análise da mediana de preços de produtos por categoria, é possív
 
 ![Produto mais caro e barato por categoria de produto](imgs/4.png)
 
+
+### Qual o produto com melhor e pior NPS ?
+
+Os produtos com melhor NPS médio são da categoria home, e os com piores NPS são da categoria de eletrônicos.
+
+![Produto mais caro e barato por categoria de produto](imgs/5.png)
+
+
+
 ## Resolução do Desafio
 
 Para responder ao desafio "Analisando a base de dados, qual o tipo de público (considerando gênero e idade) e o canal ideal para vender determinado tipo de produto?", a principal tática adotada foi a análise exploratória dos dados em conjunto com a análise de variância (ANOVA).
