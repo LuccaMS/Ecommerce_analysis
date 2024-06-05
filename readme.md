@@ -1,7 +1,3 @@
-# Desafio de Estágio em Dados - Itaú Unibanco
-
-## Desenvolvedor: Lucca Machado da Silva
-
 ## Perguntas Iniciais
 
 ### Quais os produtos mais vendidos considerando os últimos 3 anos?
